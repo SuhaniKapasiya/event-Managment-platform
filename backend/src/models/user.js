@@ -59,17 +59,16 @@ const userSchema = new mongoose.Schema(
 );
 
 // Generate JWT Token
-userSchem.methods.getJWT = async function () {
+userSchema.methods.getJWT = async function () {
   const user = this;
-  // process.env.JWT_SECRET = TinderApp$790 ToDO
-  const token = jwt.sign({ _id: user.id }, "TinderApp$790", {
+  const token = jwt.sign({ _id: user.id }, process.env.JWT_SECRET, {
     expiresIn: "7d",
   });
   return token;
 };
 
 // Compare Password
-userSchem.methods.comparepassword = async function (InputPassword) {
+userSchema.methods.comparepassword = async function (InputPassword) {
   const user = this;
   const Passwordhashe = user.password;
 

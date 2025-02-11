@@ -7,7 +7,7 @@ const authRouter = express.Router();
 
 authRouter.post("/signup", async (req, res) => {
     
-  // console.log("req", req.body);
+  console.log("req", req.body);
 
   try {
     // Validation

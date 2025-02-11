@@ -38,7 +38,16 @@ const EventSchema = new mongoose.Schema(
     },
     category: {
       type: String,
-      enum: ["Conference", "Workshop", "Meetup", "Webinar"],
+      enum: [
+        "Conference",
+        "Workshop",
+        "Meetup",
+        "Webinar",
+        "Business",
+        "Education",
+        "Entertainment",
+        "Technology",
+      ],
       required: true,
     },
     location: {
